@@ -1,37 +1,31 @@
-# _{Application Name}_
+# _Movie Website_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Add tickets to a purchase and see the total, 1.26.2016_
 
-#### By _**{List of contributors}**_
+#### By _**Joseph Karasek and Blair Peterson**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This is a mock site build of a movie theater were you may prepare a purchase of tickets. The site will allow you to chose a number of tickets for regular, students, and seniors, as well as the movie and time. The tickets are then displayed with a total value. You can reset the site as well._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+_Clone this repository and open index.html in any standard browser._
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_No known bugs at this time._
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Feel free to contact the authors of this project through GitHub._
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_The backend logic was tested using the Mocha framework with the Chai assertion library. Bootstrap and jQuery are included with the repository._
 
 ### License
 
 MIT License.
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2016 **_Joseph Karasek and Blair Peterson_**
