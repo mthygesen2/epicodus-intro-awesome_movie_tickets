@@ -51,3 +51,36 @@ TicketPurchaser.prototype.getTotalPrice = function() {
 // ===============================
 // User Interface Logic
 // ===============================
+
+$(document).ready(function() {
+  // establish new TicketPurchaser
+  var siteUser = new TicketPurchaser;
+
+  // event handler for adding a ticket
+  $('#ticketSubmit').submit(function(event) {
+    event.preventDefault();
+
+    var movieName = $('#movieSelection').val();
+    var movieTime = $('#timeSelection').val();
+    var isMatinee = false;
+    var isNewRelease = false;
+    if (movieTime === "1:00") {
+      isMatinee = true;
+    }
+    for (var i=0; i<$('#regularTicketSelection').val(); i++) {
+      var regularTickets = new Ticket(movieName, movieTime, "regular", isMatinee, isNewRelease);
+      siteUser.addTicket(regularTickets);
+    }
+    for (var i=0; i<$('#studentTicketSelection').val(); i++) {
+      var studentTickets = new Ticket(movieName, movieTime, "student", isMatinee, isNewRelease);
+      siteUser.addTicket(studentTickets);
+    }
+    for (var i=0; i<$('#seniorTicketSelection').val(); i++) {
+      var seniorTickets = new Ticket(movieName, movieTime, "senior", isMatinee, isNewRelease);
+      siteUser.addTicket(seniorTickets);
+    }
+    alert(siteUser.getTotalPrice());
+  });
+
+
+});
