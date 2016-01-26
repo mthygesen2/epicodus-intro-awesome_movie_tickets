@@ -101,4 +101,12 @@ describe('TicketPurchaser', function() {
     testPurchaser.addTicket(testTicket);
     expect(testPurchaser.tickets).to.eql([testTicket]);
   });
+  it('adds two tickets to the tickets array of a ticketPurchaser', function() {
+    var testPurchaser = new TicketPurchaser();
+    var testTicket = new Ticket("Jaws", "7:15", "senior", false, false);
+    var testTicket2 = new Ticket("Jaws", "7:15", "senior", true, true);
+    testPurchaser.addTicket(testTicket);
+    testPurchaser.addTicket(testTicket2);
+    expect(testPurchaser.tickets).to.eql([testTicket, testTicket2]);
+  });
 });
