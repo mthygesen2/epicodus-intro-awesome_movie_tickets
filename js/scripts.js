@@ -36,8 +36,10 @@ Ticket.prototype.getPurchaserDiscount = function() {
 function TicketPurchaser() {
   this.tickets = [];
 }
-TicketPurchaser.prototype.addTicket = function(ticket) {
-  this.tickets.push(ticket);
+TicketPurchaser.prototype.addTicket = function(ticket, numberOfTickets) {
+  for(var i=0; i<numberOfTickets; i++) {
+    this.tickets.push(ticket);
+  }
 }
 TicketPurchaser.prototype.getTotalPrice = function() {
   var totalPrice = 0;
@@ -67,18 +69,14 @@ $(document).ready(function() {
     if (movieTime === "1:00") {
       isMatinee = true;
     }
-    for (var i=0; i<$('#regularTicketSelection').val(); i++) {
-      var regularTickets = new Ticket(movieName, movieTime, "regular", isMatinee, isNewRelease);
-      siteUser.addTicket(regularTickets);
-    }
-    for (var i=0; i<$('#studentTicketSelection').val(); i++) {
-      var studentTickets = new Ticket(movieName, movieTime, "student", isMatinee, isNewRelease);
-      siteUser.addTicket(studentTickets);
-    }
-    for (var i=0; i<$('#seniorTicketSelection').val(); i++) {
-      var seniorTickets = new Ticket(movieName, movieTime, "senior", isMatinee, isNewRelease);
-      siteUser.addTicket(seniorTickets);
-    }
+    var regularTicket = new Ticket(movieName, movieTime, "regular", isMatinee, isNewRelease);
+    siteUser.addTicket(regularTicket, $('#regularTicketSelection').val());
+    var studentTicket = new Ticket(movieName, movieTime, "student", isMatinee, isNewRelease);
+    siteUser.addTicket(studentTicket, $('#studentTicketSelection').val());
+    var seniorTicket = new Ticket(movieName, movieTime, "senior", isMatinee, isNewRelease);
+    siteUser.addTicket(seniorTicket, $('#seniorTicketSelection').val());
+
+    alert(siteUser.getTotalPrice());
   });
 
 
