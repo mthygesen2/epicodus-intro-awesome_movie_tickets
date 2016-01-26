@@ -79,8 +79,10 @@ $(document).ready(function() {
       var seniorTickets = new Ticket(movieName, movieTime, "senior", isMatinee, isNewRelease);
       siteUser.addTicket(seniorTickets);
     }
-    alert(siteUser.getTotalPrice());
   });
 
 
 });
+
+
+// siteUser.addTicket("regular", 5)
