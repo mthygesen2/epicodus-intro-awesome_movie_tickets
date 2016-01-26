@@ -5,3 +5,7 @@
 #resultFooter {
   display: none;
 }
+
+.isMatinee {
+  font-weight: bolder;
+}
