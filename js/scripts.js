@@ -65,8 +65,11 @@ $(document).ready(function() {
     var movieTime = $('#timeSelection').val();
     var isMatinee = false;
     var isNewRelease = false;
-    if (movieTime === "1:00") {
+
+    // Check if movie is a matinee
+    if (movieTime.includes('Matinee')) {
       isMatinee = true;
+      movieTime = movieTime.slice(0,movieTime.length-8);
     }
 
     var regularTicket = new Ticket(movieName, movieTime, "regular", isMatinee, isNewRelease);
@@ -77,6 +80,7 @@ $(document).ready(function() {
 
     var seniorTicket = new Ticket(movieName, movieTime, "senior", isMatinee, isNewRelease);
     siteUser.addTicket(seniorTicket, $('#seniorTicketSelection').val());
+
 
     // determine price of individual purchase bundle
     var priceSubTotal = $('#regularTicketSelection').val()*regularTicket.getPrice() + $('#studentTicketSelection').val()*studentTicket.getPrice() + $('#seniorTicketSelection').val()*seniorTicket.getPrice();
