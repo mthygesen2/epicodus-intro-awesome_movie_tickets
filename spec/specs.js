@@ -75,6 +75,19 @@ describe('Ticket', function() {
     var testTicket = new Ticket("Jaws", "7:15", "regular", false, false);
     expect(testTicket.getNewReleaseDiscount()).to.equal(0);
   });
+  // test the getPurchaserDiscount method
+  it('has a method getPurchaserDiscount that returns the discount of a regular ticket', function() {
+    var testTicket = new Ticket("Jaws", "7:15", "regular", false, false);
+    expect(testTicket.getPurchaserDiscount()).to.equal(0);
+  });
+  it('has a method getPurchaserDiscount that returns the discount of a student ticket', function() {
+    var testTicket = new Ticket("Jaws", "7:15", "student", false, false);
+    expect(testTicket.getPurchaserDiscount()).to.equal(-0.5);
+  });
+  it('has a method getPurchaserDiscount that returns the discount of a senior ticket', function() {
+    var testTicket = new Ticket("Jaws", "7:15", "senior", false, false);
+    expect(testTicket.getPurchaserDiscount()).to.equal(-1);
+  });
 
 
 });

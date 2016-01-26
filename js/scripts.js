@@ -23,6 +23,14 @@ Ticket.prototype.getNewReleaseDiscount = function() {
   }
   return 0;
 }
+Ticket.prototype.getPurchaserDiscount = function() {
+  if (this.moviePurchaser === "student") {
+    return -0.5;
+  } else if (this.moviePurchaser === "senior") {
+    return -1;
+  }
+  return 0;
+}
 
 
 
