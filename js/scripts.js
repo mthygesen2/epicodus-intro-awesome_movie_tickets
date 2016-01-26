@@ -17,8 +17,11 @@ Ticket.prototype.getMatineeDiscount = function() {
   }
   return 0;
 }
-Ticket.prototype.getPrice = function() {
-
+Ticket.prototype.getNewReleaseDiscount = function() {
+  if (this.isNewRelease) {
+    return 1;
+  }
+  return 0;
 }
 
 
