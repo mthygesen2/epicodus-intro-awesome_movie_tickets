@@ -1,5 +1,8 @@
 .ticket {
   border: solid black 1px;
+  padding: 0 15px;
+  margin: 15px 0px;
+  background-color: #B7B7F3;
 }
 
 #resultFooter {
@@ -8,4 +11,11 @@
 
 .isMatinee {
   font-weight: bolder;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  font-family: fantasy;
+  font-weight: bold;
 }
