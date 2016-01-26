@@ -72,6 +72,12 @@ $(document).ready(function() {
       movieTime = movieTime.slice(0,movieTime.length-8);
     }
 
+    // Check if movie is a newRelease
+    if (movieName.includes('New Release')) {
+      isNewRelease = true;
+      movieName = movieName.slice(0,movieName.length-12);
+    }
+
     var regularTicket = new Ticket(movieName, movieTime, "regular", isMatinee, isNewRelease);
     siteUser.addTicket(regularTicket, $('#regularTicketSelection').val());
 
@@ -88,12 +94,18 @@ $(document).ready(function() {
     // append ticket DOM chuncks to result column
     $('#resultList').append('<div class="ticket"><h3 class="movieName">' + movieName + '</h3><p>The movie starts at <span class="movieTime">' + movieTime + '</span></p><p class="ticketNumber">' + 'Regular: ' + ($('#regularTicketSelection').val() + '  Student: ' +  $('#studentTicketSelection').val() + '  Senior: ' + $('#seniorTicketSelection').val()) + '</p><p>This movie is <span class="isMatinee">not </span>a matinee.</p><p>This bundle of ticket(s) costs $' + priceSubTotal.toFixed(2) + '</p></div>');
     $('#resultFooter').show();
+    // toggles mantinee 'not' from purchase bundle display
     if (isMatinee) {
       $('.isMatinee').last().hide();
     }
 
     // insert total cost into html
     $('#totalCostSpan').text(siteUser.getTotalPrice().toFixed(2));
+
+    // reset the form
+    $('select').each(function() {
+      this.selectedIndex = 0;
+    });
   });
 
   // event handler for reset button
