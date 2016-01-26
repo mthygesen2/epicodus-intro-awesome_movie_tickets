@@ -66,6 +66,11 @@ $(document).ready(function() {
     var isMatinee = false;
     var isNewRelease = false;
 
+    // if ( $('#regularTicketSelection').val()===0 && $('#studentTicketSelection').val()===0 && $('#seniorTicketSelection').val()===0)
+    if ( $('#regularTicketSelection').val() === '0' && $('#studentTicketSelection').val() === '0' && $('#seniorTicketSelection').val() === '0') {
+      alert("Please select a number of tickets");
+      return;
+    }
     // Check if movie is a matinee
     if (movieTime.includes('Matinee')) {
       isMatinee = true;
