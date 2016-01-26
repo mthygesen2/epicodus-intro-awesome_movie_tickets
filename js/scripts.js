@@ -39,6 +39,13 @@ function TicketPurchaser() {
 TicketPurchaser.prototype.addTicket = function(ticket) {
   this.tickets.push(ticket);
 }
+TicketPurchaser.prototype.getTotalPrice = function() {
+  var totalPrice = 0;
+  this.tickets.forEach(function(ticket) {
+    totalPrice += ticket.getPrice();
+  });
+  return totalPrice;
+}
 
 
 

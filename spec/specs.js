@@ -91,10 +91,12 @@ describe('Ticket', function() {
 });
 
 describe('TicketPurchaser', function() {
+  // test object creation
   it('creates a purchaser object with an empty ticket array', function() {
     var testPurchaser = new TicketPurchaser();
     expect(testPurchaser.tickets).to.eql([]);
   });
+  // test method addTicket
   it('adds a ticket to the tickets array of a ticketPurchaser', function() {
     var testPurchaser = new TicketPurchaser();
     var testTicket = new Ticket("Jaws", "7:15", "senior", false, false);
@@ -108,5 +110,23 @@ describe('TicketPurchaser', function() {
     testPurchaser.addTicket(testTicket);
     testPurchaser.addTicket(testTicket2);
     expect(testPurchaser.tickets).to.eql([testTicket, testTicket2]);
+  });
+  // tests method get price
+  it('returns the price of no tickets in an ticket array', function() {
+    var testPurchaser = new TicketPurchaser();
+    expect(testPurchaser.getTotalPrice()).to.equal(0);
+  });
+  it('returns the price of one ticket in the ticket array', function() {
+    var testPurchaser = new TicketPurchaser();
+    var testTicket = new Ticket("Jaws", "7:15", "regular", false, false);
+    testPurchaser.addTicket(testTicket);
+    expect(testPurchaser.getTotalPrice()).to.equal(2);
+  });
+  it('returns the price of multiple different tickets in the ticket array', function() {
+    var testPurchaser = new TicketPurchaser();
+    var testTicket = new Ticket("Jaws", "7:15", "regular", false, false);
+    testPurchaser.addTicket(testTicket);
+    testPurchaser.addTicket(testTicket);
+    expect(testPurchaser.getTotalPrice()).to.equal(4);
   });
 });
