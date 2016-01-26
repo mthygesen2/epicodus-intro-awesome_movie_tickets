@@ -48,10 +48,6 @@ TicketPurchaser.prototype.getTotalPrice = function() {
 }
 
 
-
-
-
-
 // ===============================
 // User Interface Logic
 // ===============================
