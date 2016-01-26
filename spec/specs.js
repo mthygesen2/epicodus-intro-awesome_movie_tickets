@@ -88,6 +88,17 @@ describe('Ticket', function() {
     var testTicket = new Ticket("Jaws", "7:15", "senior", false, false);
     expect(testTicket.getPurchaserDiscount()).to.equal(-1);
   });
+});
 
-
+describe('TicketPurchaser', function() {
+  it('creates a purchaser object with an empty ticket array', function() {
+    var testPurchaser = new TicketPurchaser();
+    expect(testPurchaser.tickets).to.eql([]);
+  });
+  it('adds a ticket to the tickets array of a ticketPurchaser', function() {
+    var testPurchaser = new TicketPurchaser();
+    var testTicket = new Ticket("Jaws", "7:15", "senior", false, false);
+    testPurchaser.addTicket(testTicket);
+    expect(testPurchaser.tickets).to.eql([testTicket]);
+  });
 });

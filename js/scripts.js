@@ -36,7 +36,9 @@ Ticket.prototype.getPurchaserDiscount = function() {
 function TicketPurchaser() {
   this.tickets = [];
 }
-
+TicketPurchaser.prototype.addTicket = function(ticket) {
+  this.tickets.push(ticket);
+}
 
 
 
