@@ -9,7 +9,7 @@ function Ticket(movieName, movieTime, moviePurchaser, isMatinee, isNewRelease) {
   this.isNewRelease = isNewRelease;
 }
 Ticket.prototype.getPrice = function() {
-
+  return 2 + this.getMatineeDiscount() + this.getNewReleaseDiscount() + this.getPurchaserDiscount() ;
 }
 Ticket.prototype.getMatineeDiscount = function() {
   if (this.isMatinee) {
