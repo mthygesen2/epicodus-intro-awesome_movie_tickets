@@ -78,15 +78,11 @@ $(document).ready(function() {
     var seniorTicket = new Ticket(movieName, movieTime, "senior", isMatinee, isNewRelease);
     siteUser.addTicket(seniorTicket, $('#seniorTicketSelection').val());
 
+    // determine price of individual purchase bundle
+    var priceSubTotal = $('#regularTicketSelection').val()*regularTicket.getPrice() + $('#studentTicketSelection').val()*studentTicket.getPrice() + $('#seniorTicketSelection').val()*seniorTicket.getPrice();
+
     // append ticket DOM chuncks to result column
-    // <div class="ticket">
-    //   <h3 class="movieName"></h3>
-    //   <p>The movie starts at <span class="movieTime"></span></p>
-    //   <p class="ticketType"></p>
-    //   <p>This movie is <span class="isMatinee"></span>a matinee.</p>
-    //   <p>This ticket costs <span class="cost"></span></p>
-    // </div>
-    $('#resultList').append('<div class="ticket"><h3 class="movieName">' + movieName + '</h3><p>The movie starts at <span class="movieTime">' + movieTime + '</span></p><p class="ticketNumber">' + ($('#regularTicketSelection').val() + $('#studentTicketSelection').val() + $('#seniorTicketSelection').val()) + '</p><p>This movie is <span class="isMatinee"></span>a matinee.</p><p>This bundle of ticket(s) costs <span class="cost"></span></p></div>');
+    $('#resultList').append('<div class="ticket"><h3 class="movieName">' + movieName + '</h3><p>The movie starts at <span class="movieTime">' + movieTime + '</span></p><p class="ticketNumber">' + 'Regular: ' + ($('#regularTicketSelection').val() + '  Student: ' +  $('#studentTicketSelection').val() + '  Senior: ' + $('#seniorTicketSelection').val()) + '</p><p>This movie is <span class="isMatinee"></span>a matinee.</p><p>This bundle of ticket(s) costs $' + priceSubTotal + '</p></div>');
 
     alert(siteUser.getTotalPrice());
   });
