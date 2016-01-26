@@ -83,12 +83,26 @@ $(document).ready(function() {
 
     // append ticket DOM chuncks to result column
     $('#resultList').append('<div class="ticket"><h3 class="movieName">' + movieName + '</h3><p>The movie starts at <span class="movieTime">' + movieTime + '</span></p><p class="ticketNumber">' + 'Regular: ' + ($('#regularTicketSelection').val() + '  Student: ' +  $('#studentTicketSelection').val() + '  Senior: ' + $('#seniorTicketSelection').val()) + '</p><p>This movie is <span class="isMatinee"></span>a matinee.</p><p>This bundle of ticket(s) costs $' + priceSubTotal + '</p></div>');
+    $('#resultFooter').show();
 
     // insert total cost into html
     $('#totalCostSpan').text(siteUser.getTotalPrice());
   });
 
+  // event handler for reset button
+  $('#resetPage').click(function() {
+    siteUser = new TicketPurchaser;
+    $('#resultList').empty();
+    $('#resultFooter').hide();
+  });
 
+  // event handler for purchase
+  $('#purchaseButton').click(function() {
+    siteUser = new TicketPurchaser;
+    $('#resultList').empty();
+    $('#resultFooter').hide();
+    prompt("Please enter your name, credit card, SSN, and mother's maiden name..");
+  });
 });
 
 

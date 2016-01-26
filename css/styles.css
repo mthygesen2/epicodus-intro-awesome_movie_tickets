@@ -1,3 +1,7 @@
 .ticket {
   border: solid black 1px;
 }
+
+#resultFooter {
+  display: none;
+}
