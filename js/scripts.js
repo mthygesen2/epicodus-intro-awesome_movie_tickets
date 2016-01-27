@@ -97,7 +97,7 @@ $(document).ready(function() {
     var priceSubTotal = $('#regularTicketSelection').val()*regularTicket.getPrice() + $('#studentTicketSelection').val()*studentTicket.getPrice() + $('#seniorTicketSelection').val()*seniorTicket.getPrice();
 
     // append ticket DOM chuncks to result column
-    $('#resultList').append('<div class="ticket"><h3 class="movieName">' + movieName + '</h3><p>The movie starts at <span class="movieTime">' + movieTime + '</span></p><p class="ticketNumber">' + 'Regular: ' + ($('#regularTicketSelection').val() + '  Student: ' +  $('#studentTicketSelection').val() + '  Senior: ' + $('#seniorTicketSelection').val()) + '</p><p>This movie is <span class="isMatinee">not </span>a matinee.</p><p>This bundle of ticket(s) costs $' + priceSubTotal.toFixed(2) + '</p></div>');
+    $('#resultList').append('<div class="ticket"><img class="movieImage" src="http://lorempixel.com/400/200/"><h3 class="movieName">' + movieName + '</h3><p>The movie starts at <span class="movieTime">' + movieTime + '</span></p><p class="ticketNumber">' + 'Regular: ' + ($('#regularTicketSelection').val() + '  Student: ' +  $('#studentTicketSelection').val() + '  Senior: ' + $('#seniorTicketSelection').val()) + '</p><p>This movie is <span class="isMatinee">not </span>a matinee.</p><p>This bundle of ticket(s) costs $' + priceSubTotal.toFixed(2) + '</p></div>');
     $('#resultFooter').show();
     // toggles mantinee 'not' from purchase bundle display
     if (isMatinee) {

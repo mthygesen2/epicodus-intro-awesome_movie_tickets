@@ -17,8 +17,10 @@
   	<script type="text/javascript" src="js/scripts.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="jumbotron">
       <h1>Purchase Tickets for the Super Cheap Theater</h1>
+    </div>
+    <div class="container">
       <div class="row">
         <!-- form column -->
         <div class="col-md-6">
@@ -80,7 +82,7 @@
                 <option value="7">7</option>
               </select><br>
             </div>
-            <button type="submit">Add Tickets to Purchase</button>
+            <button type="submit" class="btn btn-info">Add Tickets to Purchase</button>
           </form>
         </div>
         <!-- purchase column -->
@@ -96,8 +98,8 @@
           </div>
           <div id="resultFooter">
            <p>Total Cost: $<span id="totalCostSpan"></span></p>
-           <button id="resetPage">Reset</button>
-           <button id="purchaseButton">Purchase</button>
+           <button id="resetPage" class="btn btn-danger">Reset</button>
+           <button id="purchaseButton" class="btn btn-success">Purchase</button>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 .ticket {
   border: solid black 1px;
+  border-radius: 10px;
   padding: 0 15px;
   margin: 15px 0px;
   background-color: #B7B7F3;
@@ -18,4 +19,24 @@ h1 {
   text-decoration: underline;
   font-family: fantasy;
   font-weight: bold;
+}
+
+.jumbotron {
+  /*background-image: url(http://lorempixel.com/400/200/);*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #B7B7F3;
+  border-bottom: solid black 1px;
+
+}
+
+.movieImage {
+  float: right;
+  height: 80px;
+  width: 160px;
+  margin-top: 20px;
+}
+
+body {
+  background-color: #E0E0E0;
 }
