@@ -127,6 +127,32 @@ $(document).ready(function() {
     $('#resultFooter').hide();
     prompt("Please enter your name, credit card, SSN, and mother's maiden name..");
   });
+
+  var winWidth = $(window).width();
+  var winHeight = $(window).height();
+
+// set initial div height / width
+  $('.container').css({
+    'width': winWidth,
+    'height': winHeight,
+  });
+
+  // make sure div stays full width/height on resize
+  $(window).resize(function(){
+    var winWidth = $(window).width();
+    var winHeight = $(window).height();
+    $('.container').css({
+    'width': winWidth,
+    'height': winHeight,
+    });
+  });
+
+  $('.BTN').hover(function() {
+    var newX = (Math.random()/2) * winWidth;
+    var newY = (Math.random()/2) * winHeight;
+    $(this).css('top', newX);
+    $(this).css('right', newY);
+  });
 });
 
 
