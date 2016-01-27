@@ -1,4 +1,5 @@
 describe('Ticket', function() {
+  //These specs could be condensed into one spec that runs multiple expects
   // tests the object constructor
   it('Ticket creates an object with the right movie name', function() {
     var testTicket = new Ticket("Jaws", "7:15", "regular", false, false);
@@ -21,6 +22,7 @@ describe('Ticket', function() {
     expect(testTicket.isNewRelease).to.equal(false);
   });
   // test the getPrice method
+  //wow, lots of price specs....like...a ....lot 
   it('has a method getPrice that returns the price of a regular ticket', function() {
     var testTicket = new Ticket("Jaws", "7:15", "regular", false, false);
     expect(testTicket.getPrice()).to.equal(2);

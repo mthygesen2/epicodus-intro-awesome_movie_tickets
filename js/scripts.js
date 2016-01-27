@@ -8,6 +8,8 @@ function Ticket(movieName, movieTime, moviePurchaser, isMatinee, isNewRelease) {
   this.isMatinee = isMatinee;
   this.isNewRelease = isNewRelease;
 }
+
+//Could have combined these methods to one total price method instead of individual ifs
 Ticket.prototype.getPrice = function() {
   return 2 + this.getMatineeDiscount() + this.getNewReleaseDiscount() + this.getPurchaserDiscount() ;
 }
@@ -119,7 +121,7 @@ $(document).ready(function() {
     $('#resultList').empty();
     $('#resultFooter').hide();
   });
-
+// too funny....btw my mother's maiden name is....
   // event handler for purchase
   $('#purchaseButton').click(function() {
     siteUser = new TicketPurchaser;
@@ -146,7 +148,7 @@ $(document).ready(function() {
     'height': winHeight,
     });
   });
-
+//This was annoying but great.
   $('.BTN').hover(function() {
     var newX = (Math.random()/2) * winWidth;
     var newY = (Math.random()/2) * winHeight;
